@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    muse-api:
+        build: .
+        environment:
+            - NODE_ENV=development
+            - PORT=3000
+        volumes:
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
+        ports:
+            - 5777:3000
+            - 9229:9229
+        command: npm run dev
